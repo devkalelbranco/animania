@@ -1,0 +1,78 @@
+@import 'carousel';
+@include carousel(2);
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+nav{
+  padding: 28px;
+  background-color: #870068;
+}
+
+nav {
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+    list-style: none;
+
+    li:hover {
+      background-color: #DAF7A6;
+      transition: 0.5s;
+      color: #870068;
+    }
+  }
+
+  li:nth-child(1){
+    padding-right: 102px;
+    padding-left: 12px;
+    width: 200px;
+    height: 42px;
+    a {
+      background-image: url("./img/logo.png");
+      display: block;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 200px;
+      height: 42px;
+    }
+  }
+
+  li:nth-child(n + 2){
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    float: left;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0;
+    max-width: 200px;
+    height: 38px;
+    background-color: #FFC300;
+    border-radius: 14px;
+    a {
+      text-decoration: none;
+      color: #900C3F;
+      padding: 12px;
+    }
+
+  }
+
+  li:nth-child(n + 6){
+    margin-left: auto;
+    background-image: url("./img/whatsapp.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-color: none;
+    width: 68px;
+    height: 36px;
+    background-color: #870068;
+  }
+}
