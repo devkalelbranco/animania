@@ -1,7 +1,7 @@
 /******* Bootstrap Theming ********/
 
-$primary: #ED6436;
-$secondary: #65C178;
+$primary: #870068;
+$secondary: #C70039;
 $light: #F2F2F4;
 $dark: #181818;
 
@@ -89,7 +89,7 @@ h6 {
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {
-    color: $dark;
+    color: $light;
     background: $primary;
 }
 
@@ -161,4 +161,23 @@ h6 {
     margin: 0;
     padding: 0;
     list-style-type: none;
+}
+
+div.logo {
+    background-image: url("../img/logo.jpg") !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+h1.logo {
+    color: transparent;
+}
+
+a.whatsapp{
+    background-image: url("../img/whatsapp.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+    color: transparent;
+    
 }
