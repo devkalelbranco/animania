@@ -1,8 +1,11 @@
 (function ($) {
     "use strict";
+
+    var initialHref = window.location.href;
     
     // Dropdown on mouse hover
     $(document).ready(function () {
+
         function toggleNavbarMethod() {
             if ($(window).width() > 992) {
                 $('.navbar .dropdown').on('mouseover', function () {
@@ -16,19 +19,71 @@
         }
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
+        
     });
     
     
     // Back to top button
     $(window).scroll(function () {
+
         if ($(this).scrollTop() > 100) {
             $('.back-to-top').fadeIn('slow');
         } else {
             $('.back-to-top').fadeOut('slow');
         }
+
+        if($(this).scrollTop() < $('h4.to-us-title').offset().top){
+            location.hash = '/';
+        }  
+        if ($(this).scrollTop() >= $('h4.to-us-title').offset().top - 20 && $(this).scrollTop() < $('h4.to-schedule-title').offset().top - 20){
+            location.hash = "#/sobre-nos";    
+        }  
+        if ($(this).scrollTop() >= $('h4.to-schedule-title').offset().top - 20 && $(this).scrollTop() < $('h4.to-services-title').offset().top - 20){
+            location.hash = "#/agende-para-seu-pet";    
+        }  
+        if ($(this).scrollTop() >= $('h4.to-services-title').offset().top - 20 && $(this).scrollTop() < $('h4.to-plans-title').offset().top - 20){
+            location.hash = "#/servicos";    
+        }  
+        if ($(this).scrollTop() >= $('h4.to-plans-title').offset().top - 20){
+            location.hash = "#/planos";    
+        } 
     });
+
     $('.back-to-top').click(function () {
         $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        location.hash = "/";
+        return false;
+    });
+    
+    $('.to-us').click(function () {
+        $('html, body').animate({scrollTop: $('h4.to-us-title').offset().top - 21}, 1500, 'easeInOutExpo');
+        setTimeout(() => {
+            location.hash = "#/sobre-nos";
+        }, 1550)
+        return false;
+    });
+
+    $('.to-service').click(function () {
+        $('html, body').animate({scrollTop: $('h4.to-services-title').offset().top - 20}, 1500, 'easeInOutExpo');
+        setTimeout(() => {
+            location.hash = "#/servicos";    
+        }, 1550)
+        return false;
+    });
+
+    $('.to-plans').click(function () {
+        $('html, body').animate({scrollTop: $('h4.to-plans-title').offset().top - 20}, 1500, 'easeInOutExpo');  
+        setTimeout(() => {
+            location.hash = "#/planos";
+        }, 1550)
+        return false;
+    });
+
+    $('.to-schedule').click(function () {
+        $('html, body').animate({scrollTop: $('h4.to-schedule-title').offset().top - 20}, 1500, 'easeInOutExpo');
+        setTimeout(() => {
+            location.hash = "#/agende-para-seu-pet";
+        }, 1550)
         return false;
     });
 
