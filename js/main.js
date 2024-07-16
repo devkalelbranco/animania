@@ -19,6 +19,29 @@
         }
         toggleNavbarMethod();
         $(window).resize(toggleNavbarMethod);
+
+        $("#formSaberMais").submit((val) => {
+            let nome = $("#formSaberMais :input").val();
+            let selects = [];
+            $("#formSaberMais > div > select").each(function() {
+                selects.push($(this).val());
+            })
+            let servico = selects[0]
+            let pet = selects[1];
+            
+            if(!servico){
+                alert("Selecione um serviço.");
+                return false;
+            }
+            if(!pet){
+                alert("Selecione qual é seu pet.");
+                return false;
+            }
+
+            let text = `Olá meu nome é ${nome}, gostaria de saber mais sobre ${servico} e eu tenho um ${pet}.`;
+
+            window.open("https://wa.me/5551999411467?text=" + text);
+        })
         
     });
     
@@ -121,4 +144,5 @@
     });
     
 })(jQuery);
+
 
