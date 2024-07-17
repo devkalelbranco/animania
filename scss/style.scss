@@ -1,5 +1,16 @@
 /******* Bootstrap Theming ********/
 
+@font-face {
+    font-family: 'Panama';
+    src: url(Panama-Bold.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pangram-Light';
+    src: url(Pangram-Light.woff) format('woff');
+}
+
+
+
 $primary: rgb(165, 61, 93);
 $secondary: rgb(234, 176, 44);
 $light: #F2F2F4;
@@ -12,9 +23,9 @@ $theme-colors: (
     "dark": $dark,
 );
 
-$font-family-sans-serif: 'Nunito Sans', sans-serif;
+$font-family-sans-serif: 'Pangram-Light';
 
-$headings-font-family: 'Nunito', sans-serif;
+$headings-font-family: 'Panama';
 
 $body-color: #777777;
 

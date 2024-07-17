@@ -29,6 +29,10 @@
             let servico = selects[0]
             let pet = selects[1];
             
+            if(!nome){
+                alert("Informe o nome.");
+                return false;
+            }
             if(!servico){
                 alert("Selecione um serviço.");
                 return false;
@@ -38,9 +42,9 @@
                 return false;
             }
 
-            let text = `Olá meu nome é ${nome}, gostaria de saber mais sobre ${servico} e eu tenho um ${pet}.`;
+            let text = `Olá meu nome é ${nome}.\nGostaria de saber mais sobre ${servico}.\nO meu pet é um ${pet}.`;
 
-            window.open("https://wa.me/5551999411467?text=" + text);
+            window.open("https://wa.me/5551999411467?text=" + encodeURIComponent(text));
         })
         
     });
@@ -69,6 +73,9 @@
         }  
         if ($(this).scrollTop() >= $('h4.to-plans-title').offset().top - 20){
             location.hash = "#/planos";    
+        } 
+        if ($(this).scrollTop() >= $('h4.to-customers-title').offset().top - 20){
+            location.hash = "#/clientes";    
         } 
     });
 
@@ -106,6 +113,14 @@
         $('html, body').animate({scrollTop: $('h4.to-schedule-title').offset().top - 20}, 1500, 'easeInOutExpo');
         setTimeout(() => {
             location.hash = "#/agende-para-seu-pet";
+        }, 1550)
+        return false;
+    });
+
+    $('.to-customers').click(function () {
+        $('html, body').animate({scrollTop: $('h4.to-customers-title').offset().top - 20}, 1500, 'easeInOutExpo');
+        setTimeout(() => {
+            location.hash = "#/clientes";
         }, 1550)
         return false;
     });
